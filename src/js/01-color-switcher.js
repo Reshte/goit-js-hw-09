@@ -20,10 +20,12 @@ function startChangeColor() {
   intervalID = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
     refs.startBtn.disabled = true;
+    refs.stopBtn.disabled = false;
   }, 1000);
 }
 
 function stopChangeColor() {
+  refs.stopBtn.disabled = true;
   refs.startBtn.disabled = false;
   clearInterval(intervalID);
 }
